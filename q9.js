@@ -3,7 +3,7 @@ db.poems.insertMany([
     {
       title: "Pearls of Wisdom",
       poet: "Manogna",
-      theme: "Gratitude 🙏",
+      theme: "Gratitude",
       year: 2024,
       lines: [
         "In the ocean of time, wisdom shines bright,",
