@@ -3,3 +3,4 @@ db.products.insertOne({
     email:"manogna24316@gmail.com",
     pass:"5678"
 });
+db.products.find()
