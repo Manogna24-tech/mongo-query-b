@@ -3,3 +3,4 @@
 //use mydb-b
 //db.createCollection("products")
 //show collections
+//db.products.renameCollection("users")

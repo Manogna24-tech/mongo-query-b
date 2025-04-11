@@ -1,6 +1,6 @@
 db.products.insertOne({
-    name:"Manogna",
-    email:"manogna24316@gmail.com",
-    pass:"5678"
+    name:"Mike",
+    email:"mike@gmail.com",
+    pass:"1234"
 });
 db.products.find()
