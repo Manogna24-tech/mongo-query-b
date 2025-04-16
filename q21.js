@@ -17,3 +17,10 @@ db.employees.find({
 ],
 });//and operator - both the conditions should be true
 
+db.employees.find({
+    $nor:[
+        {salary:{$gt:2000}},
+        {department:{$eq:"HR"}}
+],
+});//nor operator - neither of the condition should be true
+
