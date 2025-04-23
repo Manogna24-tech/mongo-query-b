@@ -69,3 +69,14 @@ db.employees.aggregate([
     { $group: { _id: "$department", total: { $sum: "salaryInt"} } },
 ]);
 
+db.createView(
+    "HREmployees",
+    "employees",
+    [
+      {
+        $match: {
+          department: "HR"
+        }
+      }
+    ]
+  )
