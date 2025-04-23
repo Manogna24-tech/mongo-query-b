@@ -36,3 +36,36 @@ db.employees.aggregate([
     { $skip:  1},
     { $limit: 1}
 ]); 
+
+db.employees.aggregate([
+    { $group: { _id: "$department", total: { $sum: "salary"} } },
+]);
+
+db.employees.aggregate([
+    {$match: {department: {$in: ["HR","IT"]}}},
+    { $group: { _id: "$department", total: { $sum: "salary"} } },
+]);
+
+db.employees.aggregate([
+    {$match:{name:{$ne:""}}},
+    {$project:{_id:0,name:1,location:1}}
+]); 
+
+db.employees.aggregate([
+    {$match:{name:{$ne:""}}},
+    {$project:{_id:0,name:1,location:1}},
+    {$unwind: "$location"}
+]); 
+
+db.employees.aggregate([
+    {$match:{department:{$in:["HR","IT"]}}},
+    {$project:{_id:0,department:1,salary:1}},
+    { $group: { _id: "$department", total: { $sum: "salary"} } },
+]);
+
+db.employees.aggregate([
+    {$match:{department:{$in:["HR","IT"]}}},
+    {$project:{_id:0,department:1,salaryInt:{input:"salary",to:"int"}}},
+    { $group: { _id: "$department", total: { $sum: "salaryInt"} } },
+]);
+
